@@ -1,0 +1,93 @@
+// ViewPage.js
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, StyleSheet } from 'react-native';
+import Card from '../Components/Card'; // Import the Card component
+
+const ViewPage = () => {
+  const [dataList, setDataList] = useState([]);
+
+  // Simulated data for demonstration purposes; replace with your actual data source
+  const dummyData = [
+    {
+      name: 'Location 1',
+      description: 'Description for Location 1',
+      latitude: '12.345',
+      longitude: '67.890',
+      imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+    },
+    {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+      {
+        name: 'Location 1',
+        description: 'Description for Location 1',
+        latitude: '12.345',
+        longitude: '67.890',
+        imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      },
+    // Add more data items as needed
+  ];
+
+  useEffect(() => {
+    // Simulated data fetching; replace with your data fetching logic
+    setDataList(dummyData);
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={dataList}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <Card data={item} />}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f0f0f0',
+  },
+});
+
+export default ViewPage;
