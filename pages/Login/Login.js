@@ -2,13 +2,24 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const App = () => {
-const navigation = useNavigation();
+const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // Handle login logic here
+    // Simulate a simple login logic for demonstration purposes
+    // In a real application, you would make an API call to authenticate the user
+
+    // Replace the following with your actual authentication logic
+    if (email === 'user@example.com' && password === 'password') {
+      setIsAuthenticated(true);
+      navigation.navigate('ViewSurvey'); // Navigate to the Survey screen after successful login
+    } else {
+      setIsAuthenticated(false);
+      alert('Invalid email or password. Please try again.');
+    }
   };
 
   return (
@@ -28,7 +39,12 @@ const navigation = useNavigation();
         value={password}
       />
       <Button title="Login" onPress={handleLogin} />
-      <Text style={styles.signupText}>Don't have an account? <Text style={styles.signupLink} onPress={() => navigation.navigate('Signup')}>Sign up</Text></Text>
+      <Text style={styles.signupText}>
+        Don't have an account?{' '}
+        <Text style={styles.signupLink} onPress={() => navigation.navigate('Signup')}>
+          Sign up
+        </Text>
+      </Text>
     </View>
   );
 };
@@ -57,8 +73,8 @@ const styles = StyleSheet.create({
   },
   signupLink: {
     fontWeight: 'bold',
-    color: 'blue', // You can use any desired color for the link
+    color: 'blue',
   },
 });
 
-export default App;
+export default Login;
