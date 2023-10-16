@@ -2,7 +2,6 @@
 import React from 'react';
 import { View, Text, Button, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SelectDropdown from 'react-native-select-dropdown'
 
 const Home = () => {
     const navigation = useNavigation();
@@ -19,8 +18,6 @@ const Home = () => {
       </Text>
 
       <Button title="Learn more" onPress={() => alert('Learn more button clicked')} />
-      <Button title="Dashboard" onPress={() => navigation.navigate('Dashboard')} />
-      <Button title="Form" onPress={() => navigation.navigate('Form')} />
       <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} />
 
     </View>

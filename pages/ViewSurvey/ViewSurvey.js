@@ -2,8 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import Card from '../Components/Card'; // Import the Card component
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Form from '../Form/Form'
+import Logout from '../LogOut/Logout'
 
-const ViewPage = () => {
+
+
+const Survey = () => {
   const [dataList, setDataList] = useState([]);
 
   // Simulated data for demonstration purposes; replace with your actual data source
@@ -83,6 +88,23 @@ const ViewPage = () => {
   );
 };
 
+
+const Drawer = createDrawerNavigator();
+const ViewSurvey = () => {
+  return (
+      <Drawer.Navigator initialRouteName="Survey">
+        <Drawer.Screen name="Survey" component={Survey}/>
+        {/* <Drawer.Screen name="Home" component={Home}/> */}
+        {/* <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
+        <Drawer.Screen name="Form" component={Form} />
+        <Drawer.Screen name="Log Out" component={Logout}/>
+        {/* <Drawer.Screen name="Login" component={Login}/> */}
+      </Drawer.Navigator>
+  );
+};
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -90,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ViewPage;
+export default ViewSurvey;
