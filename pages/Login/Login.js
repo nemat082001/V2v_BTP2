@@ -1,26 +1,51 @@
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+// import axios from 'axios';
 
 const Login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = () => {
-    // Simulate a simple login logic for demonstration purposes
-    // In a real application, you would make an API call to authenticate the user
 
-    // Replace the following with your actual authentication logic
-    if (email === 'user@example.com' && password === 'password') {
-      setIsAuthenticated(true);
-      navigation.navigate('ViewSurvey'); // Navigate to the Survey screen after successful login
-    } else {
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/auth/login', {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        setIsAuthenticated(true);
+        navigation.navigate('ViewSurvey'); 
+      } else {
+        setIsAuthenticated(false);
+        setError('Invalid email or password. Please try again.');
+      }
+    } catch (error) {
       setIsAuthenticated(false);
-      alert('Invalid email or password. Please try again.');
+      setError('An error occurred during login. Please try again.');
     }
   };
+
+
+  // const handleLogin = () => {
+  //   // Simulate a simple login logic for demonstration purposes
+  //   // In a real application, you would make an API call to authenticate the user
+
+  //   // Replace the following with your actual authentication logic
+  //   if (email === 'user@example.com' && password === 'password') {
+  //     setIsAuthenticated(true);
+  //     navigation.navigate('ViewSurvey'); // Navigate to the Survey screen after successful login
+  //   } else {
+  //     setIsAuthenticated(false);
+  //     alert('Invalid email or password. Please try again.');
+  //   }
+  // };
 
   return (
     <View style={styles.container}>

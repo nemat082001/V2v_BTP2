@@ -7,8 +7,8 @@ const Home = () => {
     const navigation = useNavigation();
   return (
       <View style={styles.container}>
-        <ImageBackground source={require('./background.gif')} style={styles.backgroundImage}>
-      {/* <Image source={require('./background.gif')} style={styles.backgroundImage} /> */}
+        <ImageBackground source={require('./pattern-3296033_1280.png')} style={styles.backgroundImage}>
+      {/* <Image source={require('./pattern-3296033_1280.png')} style={styles.backgroundImage} /> */}
       <View style={styles.container}>
       <Text style={styles.title}>Vurnebility to Viability Global Partnership</Text>
       <Text style={styles.subtitle}>
@@ -18,7 +18,7 @@ const Home = () => {
       </Text>
 
       <Button title="Learn more" onPress={() => alert('Learn more button clicked')} />
-      <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} />
+      {/* <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} /> */}
 
     </View>
       <View style={styles.signupButtonContainer}>

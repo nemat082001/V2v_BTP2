@@ -1,14 +1,24 @@
-// Signup.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Signup = () => {
+  const navigation = useNavigation(); // Access the navigation object
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignup = () => {
-    // Handle signup logic here
+    // Simulate a simple signup logic for demonstration purposes
+    // In a real application, you would make an API call to create an account
+
+    // Replace the following with your actual account creation logic
+    if (password === confirmPassword) {
+      // Account created successfully, navigate to the login screen
+      navigation.navigate('Login');
+    } else {
+      alert('Passwords do not match. Please try again.');
+    }
   };
 
   return (
