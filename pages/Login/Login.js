@@ -1,8 +1,7 @@
-
+// import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-// import axios from 'axios';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -11,41 +10,65 @@ const Login = () => {
   const [error, setError] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // const handleLogin = async () => {
+  //   try {
+  //    await fetch('https://dog.ceo/api/breeds/list').then((res)=>{
+  //        alert(res.ok);
+  //     });
+      
+
+  //     if (response.status === 200) {
+  //       setIsAuthenticated(true);
+  //       navigation.navigate('ViewSurvey');
+  //     } else {
+  //       setIsAuthenticated(false);
+  //       setError('Invalid email or password. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     setIsAuthenticated(false);
+  //     setError('An error occurred during login. Please try again.');
+  //   }
+  // };
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   // alert('button pressed')
+  //    await fetch("https://82a5-203-110-242-42.ngrok-free.app/auth/login", {
+  //       method: 'POST',
+  //       // body: JSON.stringify(data),
+  //       headers: {
+  //           'Content-Type': 'application/json'
+  //       },
+        
+  //       body: JSON.stringify({ email: 'puma@gmail.com', password: '8627' })
+  //   }).then((res)=>{
+  //       alert("hi");
+  //       console.log(res);
+  //   },(err)=>{
+  //     alert(err); 
+  //    });
+  //  // alert( response.text())
+  // }
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
-        email,
-        password,
+      const response = await fetch("https://82a5-203-110-242-42.ngrok-free.app/auth/login", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password }) // Use the actual email and password entered by the user
       });
 
       if (response.status === 200) {
-        setIsAuthenticated(true);
-        navigation.navigate('ViewSurvey'); 
+        navigation.navigate('ViewSurvey');
       } else {
-        setIsAuthenticated(false);
         setError('Invalid email or password. Please try again.');
       }
     } catch (error) {
-      setIsAuthenticated(false);
       setError('An error occurred during login. Please try again.');
     }
-  };
-
-
-  // const handleLogin = () => {
-  //   // Simulate a simple login logic for demonstration purposes
-  //   // In a real application, you would make an API call to authenticate the user
-
-  //   // Replace the following with your actual authentication logic
-  //   if (email === 'user@example.com' && password === 'password') {
-  //     setIsAuthenticated(true);
-  //     navigation.navigate('ViewSurvey'); // Navigate to the Survey screen after successful login
-  //   } else {
-  //     setIsAuthenticated(false);
-  //     alert('Invalid email or password. Please try again.');
-  //   }
-  // };
+  }
 
   return (
     <View style={styles.container}>
