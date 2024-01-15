@@ -15,7 +15,6 @@ const Login = () => {
   //    await fetch('https://dog.ceo/api/breeds/list').then((res)=>{
   //        alert(res.ok);
   //     });
-      
 
   //     if (response.status === 200) {
   //       setIsAuthenticated(true);
@@ -52,7 +51,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("https://82a5-203-110-242-42.ngrok-free.app/auth/login", {
+      const response = await fetch("https://9320-203-110-242-44.ngrok-free.app/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -93,6 +92,9 @@ const Login = () => {
           Sign up
         </Text>
       </Text>
+      <Text style={styles.forgotPasswordLink} onPress={() => navigation.navigate('ForgotPassword')}>
+        Forgot Password?
+      </Text>
     </View>
   );
 };
@@ -122,6 +124,11 @@ const styles = StyleSheet.create({
   signupLink: {
     fontWeight: 'bold',
     color: 'blue',
+  },
+  forgotPasswordLink: {
+    fontWeight: 'bold',
+    color: 'blue',
+    marginTop: 10, // Add some margin to separate it from the "Sign up" link
   },
 });
 

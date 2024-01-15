@@ -7,10 +7,10 @@ const Home = () => {
     const navigation = useNavigation();
   return (
       <View style={styles.container}>
-        <ImageBackground source={require('./pattern-3296033_1280.png')} style={styles.backgroundImage}>
+        <ImageBackground source={require('./background.gif')} style={styles.backgroundImage}>
       {/* <Image source={require('./pattern-3296033_1280.png')} style={styles.backgroundImage} /> */}
       <View style={styles.container}>
-      <Text style={styles.title}>Vurnebility to Viability Global Partnership</Text>
+      <Text style={styles.title}>Vulnerability to Viability Global Partnership</Text>
       <Text style={styles.subtitle}>
         V2V is a transdisciplinary global partnership and knowledge network
         with members from Africa, Asia, Canada, and Internationally. Our aim is to
@@ -18,7 +18,7 @@ const Home = () => {
       </Text>
 
       <Button title="Learn more" onPress={() => alert('Learn more button clicked')} />
-      {/* <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} /> */}
+      <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} />
 
     </View>
       <View style={styles.signupButtonContainer}>

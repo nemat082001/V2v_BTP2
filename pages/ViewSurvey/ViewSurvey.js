@@ -18,7 +18,7 @@ const Survey = () => {
       description: 'Description for Location 1',
       latitude: '12.345',
       longitude: '67.890',
-      imageSource: 'https://amazon.jobs/content/_next/image?url=https%3A%2F%2Fstatic.jobs.production.amazon-jobs.brightspot.cloud%2F97%2F83%2Fb19e9f994d2b8869c0388279e408%2Fsp-amer-arlington-img-9507.jpg&w=3840&q=75',
+      imageSource: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fswarajyamag.com%2Fpolitics%2Fhow-the-nda-government-has-taken-up-the-cause-of-the-fishermen-of-tamil-nadu&psig=AOvVaw13IfQIPnW3nRYBdYzTNPgk&ust=1699028777967000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjoicjdpYIDFQAAAAAdAAAAABAE',
     },
     {
         name: 'Location 1',
