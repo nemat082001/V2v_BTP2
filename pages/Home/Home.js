@@ -19,6 +19,8 @@ const Home = () => {
 
       <Button title="Learn more" onPress={() => alert('Learn more button clicked')} />
       <Button title="ViewSurvey" onPress={() => navigation.navigate('ViewSurvey')} />
+      <Button title="Edit Profile" onPress={() => navigation.navigate('EditDetailsPage')} />
+      <Button title="Survey" onPress={() => navigation.navigate('SurveyPage')} />
 
     </View>
       <View style={styles.signupButtonContainer}>

@@ -8,7 +8,10 @@ import Home from './pages/Home/Home';
 import Form from './pages/Form/Form';
 import ViewSurvey from './pages/ViewSurvey/ViewSurvey';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
-// import Dashboard from './pages/Dashboard/Dashboard';
+import EditDetailsPage from './pages/Edit_details/Edit_page';
+import SurveyPage from './pages/Survey/SurveyPage.js';
+// Remove ProfilePhoto if it's not meant to be a screen
+// import ProfilePhoto from './pages/Edit_details/Profile_Image';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +24,10 @@ const App = () => {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="Form" component={Form}/>
+        <Stack.Screen name="EditDetailsPage" component={EditDetailsPage} />
+        <Stack.Screen name="SurveyPage" component={SurveyPage} />
+        {/* If ProfilePhoto is not a screen, remove this line */}
+        {/* <Stack.Screen name="ProfilePage" component={ProfilePhoto} /> */}
         {/* view survey button to be removed post development, only here for unauthorised access */}
         <Stack.Screen name="ViewSurvey" component={ViewSurvey} options={{headerShown: false}}/>
         {/* <Stack.Screen name="Dashboard" component={Dashboard}/> */}
